@@ -1,18 +1,22 @@
 /**
-* jQuery Google Map Helper
-* Copyright (c) 2011 Kevin Doyle
-* Copyright (c) 2014 Patrick Nelson
-* Dual licensed under the MIT and GPL licenses:
-* http://www.opensource.org/licenses/mit-license.php
-* http://www.gnu.org/licenses/gpl.html
-**/
+ * jQuery Google Map Helper
+ * Copyright (c) 2011 Kevin Doyle
+ * Copyright (c) 2014 Patrick Nelson
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * TODO: Remove references to $(".set"), which are direct bindings to front-end UI and replace with callbacks.
+ **/
 (function($) {
    $.fn.googleMap = function(options) {
       var defaults = {
          mapType: "roadmap",
-         url: "data.json"
-      }
-      var options = $.extend(defaults, options);
+         url: "data.json",
+         styles: null
+      };
+      options = $.extend(defaults, options);
+
       return this.each(function() {
          var obj = $(this)[0],
          mapTypeDisplay, mapOptions, map, geocoder, bounds, tempLatLng, tempMarker, tempLat, tempLng, initialset, infowindow;
@@ -34,7 +38,7 @@
             zoom: 8,
             center: new google.maps.LatLng(0,0),
             mapTypeId:mapTypeDisplay
-         },
+         };
          map = new google.maps.Map(obj,mapOptions);
          infowindow = new google.maps.InfoWindow();
 
