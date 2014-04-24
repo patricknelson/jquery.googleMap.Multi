@@ -1,5 +1,7 @@
 /**
  * jQuery Google Map Helper
+ * https://github.com/patricknelson/jquery.googleMap.Multi
+ *
  * Copyright (c) 2011 Kevin Doyle
  * Copyright (c) 2014 Patrick Nelson
  * Dual licensed under the MIT and GPL licenses:
