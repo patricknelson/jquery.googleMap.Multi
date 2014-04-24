@@ -13,7 +13,7 @@
       var defaults = {
          mapType: "roadmap",
          url: "data.json",
-         styles: null
+         styles: []
       };
       options = $.extend(defaults, options);
 
@@ -37,7 +37,8 @@
          mapOptions = {
             zoom: 8,
             center: new google.maps.LatLng(0,0),
-            mapTypeId:mapTypeDisplay
+            mapTypeId: mapTypeDisplay,
+            styles: options.styles
          };
          map = new google.maps.Map(obj,mapOptions);
          infowindow = new google.maps.InfoWindow();
